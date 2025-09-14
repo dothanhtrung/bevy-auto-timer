@@ -5,8 +5,8 @@
 //! A convenient timer which ticks automatically.
 
 use bevy::prelude::{
-    in_state, App, Commands, Component, Entity, Event, IntoScheduleConfigs, Plugin, Query, Res, States, Time, Timer,
-    TimerMode, Update,
+    in_state, App, Commands, Component, Entity, EntityEvent, IntoScheduleConfigs, Plugin, Query, Res, States,
+    Time, Timer, TimerMode, Update,
 };
 
 macro_rules! plugin_systems {
@@ -94,8 +94,10 @@ pub struct AutoTimer {
 }
 
 /// Triggered when the timer is finished
-#[derive(Event)]
-pub struct AutoTimerFinished;
+#[derive(EntityEvent)]
+pub struct AutoTimerFinished {
+    pub entity: Entity,
+}
 
 impl AutoTimer {
     pub fn from_seconds(duration: f32, mode: TimerMode) -> Self {
@@ -115,7 +117,7 @@ fn auto_tick(mut commands: Commands, time: Res<Time>, mut query: Query<(&mut Aut
     for (mut timer, e) in query.iter_mut() {
         timer.timer.tick(time.delta());
         if timer.timer.just_finished() {
-            commands.trigger_targets(AutoTimerFinished, e);
+            commands.trigger(AutoTimerFinished { entity: e });
             match timer.action_on_finish {
                 ActionOnFinish::Nothing => {}
                 ActionOnFinish::Despawn => {

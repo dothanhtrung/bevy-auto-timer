@@ -30,6 +30,6 @@ fn setup(mut commands: Commands, mut next_state: ResMut<NextState<GameState>>) {
     next_state.set(GameState::InGame);
 }
 
-fn timeout(_: Trigger<AutoTimerFinished>) {
+fn timeout(_: On<AutoTimerFinished>) {
     info!("Timer finished!");
 }
