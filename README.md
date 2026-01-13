@@ -21,7 +21,7 @@ Quickstart
 
 ```rust
 use bevy::prelude::*;
-use bevy_auto_timer::{AutoTimer, AutoTimerFinished, AutoTimerPlugin, AutoTimerPluginAnyState};
+use bevy_auto_timer::{AutoTimer, AutoTimerFinished, AutoTimerPlugin};
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
 enum GameState {
@@ -32,7 +32,8 @@ enum GameState {
 }
 
 fn main() {
-    let mut app = App::new().add_plugins(DefaultPlugins).init_state::<GameState>();
+    let mut app = App::new();
+    app.add_plugins(DefaultPlugins).init_state::<GameState>();
 
     // Add this plugin and specify which state it will run in
     app.add_plugins(AutoTimerPlugin::new(vec![GameState::InGame, GameState::EndGame]));
@@ -51,7 +52,7 @@ fn setup(mut commands: Commands, mut next_state: ResMut<NextState<GameState>>) {
     next_state.set(GameState::InGame);
 }
 
-fn timeout(_: Trigger<AutoTimerFinished>) {
+fn timeout(_: On<AutoTimerFinished>) {
     info!("Timer finished!");
 }
 ```
@@ -67,4 +68,6 @@ Compatible Bevy Versions
 
 | bevy | bevy_auto_timer |
 |------|-----------------|
+| 0.18 | 0.3             |
+| 0.17 | 0.2-0.3         |
 | 0.16 | 0.1             |
