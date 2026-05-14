@@ -5,9 +5,23 @@
 //! A convenient timer which ticks automatically.
 
 use bevy::prelude::{
-    in_state, App, Commands, Component, Entity, EntityEvent, IntoScheduleConfigs, Plugin, Query, Res, States,
-    Time, Timer, TimerMode, Update,
+    App,
+    Commands,
+    Component,
+    Entity,
+    EntityEvent,
+    IntoScheduleConfigs,
+    Plugin,
+    Query,
+    Res,
+    States,
+    Time,
+    Timer,
+    TimerMode,
+    Update,
+    in_state,
 };
+use std::time::Duration;
 
 macro_rules! plugin_systems {
     ( ) => {
@@ -100,6 +114,13 @@ pub struct AutoTimerFinished {
 }
 
 impl AutoTimer {
+    pub fn new(duration: Duration, mode: TimerMode) -> Self {
+        Self {
+            timer: Timer::new(duration, mode),
+            ..Self::default()
+        }
+    }
+
     pub fn from_seconds(duration: f32, mode: TimerMode) -> Self {
         Self {
             timer: Timer::from_seconds(duration, mode),

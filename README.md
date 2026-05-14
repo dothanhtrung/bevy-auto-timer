@@ -1,16 +1,16 @@
 <div align="center">
 
-bevy_auto_timer
+bevy-auto-timer
 ===============
 
-[![crates.io](https://img.shields.io/crates/v/bevy_auto_timer)](https://crates.io/crates/bevy_auto_timer)
-[![docs.rs](https://docs.rs/bevy_auto_timer/badge.svg)](https://docs.rs/bevy_auto_timer)
-[![dependency status](https://deps.rs/repo/gitlab/kimtinh/bevy_auto_timer/status.svg)](https://deps.rs/repo/gitlab/kimtinh/bevy_auto_timer)
-[![pipeline status](https://gitlab.com/kimtinh/bevy_auto_timer/badges/master/pipeline.svg)](https://gitlab.com/kimtinh/bevy_auto_timer/-/commits/master)
+[![crates.io](https://img.shields.io/crates/v/bevy-auto-timer)](https://crates.io/crates/bevy-auto-timer)
+[![docs.rs](https://docs.rs/bevy-auto-timer/badge.svg)](https://docs.rs/bevy-auto-timer)
+[![dependency status](https://deps.rs/repo/gitlab/245project/bevy-plugin/bevy-auto-timer/status.svg)](https://deps.rs/repo/gitlab/245project/bevy-plugin/bevy-auto-timer)
+[![pipeline status](https://gitlab.com/245project/bevy-plugin/bevy-auto-timer/badges/master/pipeline.svg)](https://gitlab.com/245project/bevy-plugin/bevy-auto-timer/-/commits/master)
 
 
-[![Gitlab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/kimtinh/bevy_auto_timer)
-[![Github](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dothanhtrung/bevy_auto_timer)
+[![Gitlab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/245project/bevy-plugin/bevy-auto-timer)
+[![Github](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dothanhtrung/bevy-auto-timer)
 
 </div>
 
@@ -21,7 +21,7 @@ Quickstart
 
 ```rust
 use bevy::prelude::*;
-use bevy_auto_timer::{AutoTimer, AutoTimerFinished, AutoTimerPlugin};
+use bevy-auto-timer::{AutoTimer, AutoTimerFinished, AutoTimerPlugin};
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
 enum GameState {
@@ -66,7 +66,7 @@ Please see [LICENSE](./LICENSE).
 Compatible Bevy Versions
 ------------------------
 
-| bevy | bevy_auto_timer |
+| bevy | bevy-auto-timer |
 |------|-----------------|
 | 0.18 | 0.3             |
 | 0.17 | 0.2-0.3         |

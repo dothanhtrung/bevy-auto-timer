@@ -1,5 +1,9 @@
 use bevy::prelude::*;
-use bevy_auto_timer::{AutoTimer, AutoTimerFinished, AutoTimerPlugin};
+use bevy_auto_timer::{
+    AutoTimer,
+    AutoTimerFinished,
+    AutoTimerPlugin,
+};
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
 enum GameState {
