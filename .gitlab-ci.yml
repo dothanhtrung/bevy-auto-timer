@@ -31,7 +31,7 @@ test:
     - cargo test --tests
     - cargo test --examples
     # Delete all files older than 60 days to free the cache
-    - find . -mtime +60 -print -delete || true
+    - find . -mtime +30 -print -delete || true
   rules:
     - changes:
       - Cargo.toml
