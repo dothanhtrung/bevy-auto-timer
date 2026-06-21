@@ -30,7 +30,8 @@ test:
   script:
     - cargo test --tests
     - cargo test --examples
-    - /usr/local/cargo/bin/cargo-sweep sweep -t 60 || true
+    # Delete all files older than 60 days to free the cache
+    - find . -mtime +60 -print -delete || true
   rules:
     - changes:
       - Cargo.toml

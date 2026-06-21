@@ -4,8 +4,8 @@ bevy-auto-timer
 ===============
 
 [![crates.io](https://img.shields.io/crates/v/bevy-auto-timer)](https://crates.io/crates/bevy_auto_timer)
-[![docs.rs](https://docs.rs/bevy-auto-timer/badge.svg)](https://docs.rs/bevy_auto_timer)
-[![dependency status](https://deps.rs/repo/gitlab/245project/bevy-plugin/bevy-auto-timer/status.svg)](https://deps.rs/repo/gitlab/245project/bevy-plugin/bevy-auto-timer)
+[![docs.rs](https://docs.rs/bevy_auto_timer/badge.svg)](https://docs.rs/bevy_auto_timer)
+[![dependency status](https://deps.rs/crate/bevy_auto_timer/latest/status.svg)](https://deps.rs/crate/bevy_auto_timer/latest)
 [![pipeline status](https://gitlab.com/245project/bevy-plugin/bevy-auto-timer/badges/master/pipeline.svg)](https://gitlab.com/245project/bevy-plugin/bevy-auto-timer/-/commits/master)
 
 
@@ -68,6 +68,7 @@ Compatible Bevy Versions
 
 | bevy | bevy-auto-timer |
 |------|-----------------|
+| 0.19 | 0.3             |
 | 0.18 | 0.3             |
 | 0.17 | 0.2-0.3         |
 | 0.16 | 0.1             |
